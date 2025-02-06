@@ -2,6 +2,7 @@
 
 number=$1
 if[ number -gt 10 ];
+
 then
   echo "$number is gt 10"
 else 
