@@ -3,8 +3,8 @@ date=$(date +%F)
 USERID=$(id -u)
 scriptname=$0
 logfile=/tmp/$scriptname-$date.log
-r="\e[30m"
-g="\e[31m"
+r="\e[31m"
+g="\e[32m"
 n="\e[0m"
 
 validate(){
