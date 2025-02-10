@@ -4,5 +4,5 @@ G="\e[32m"
 
 for i in {1..100}
 do 
-    echo -e "$G $1"
+    echo  $1
 done
