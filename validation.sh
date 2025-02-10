@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USERID=$(id -u)
-if [ $USERID -ne 0 ]
+
 validate(){
     if [ $1 -ne 0 ]
     then 
@@ -11,6 +11,7 @@ validate(){
         echo " $2 .... success"
     fi
 }
+if [ $USERID -ne 0 ]
 then 
     echo "ERROR: Your not the root user"
     exit 1
