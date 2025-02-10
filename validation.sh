@@ -2,6 +2,14 @@
 
 USERID=$(id -u)
 if [ $USERID -ne 0 ]
+validate(){
+    if [ $1 -ne 0 ]
+    then 
+        echo " $2.... failure"
+        exit 1
+    else   
+        echo " $2 .... success"
+}
 then 
     echo "ERROR: Your not the root user"
     exit 1
@@ -11,19 +19,7 @@ fi
 
 yum install mysql -y 
 
-if [ $? -ne 0 ]
-then 
-    echo " installation of mysql is error"
-    exit 1
-else
-    echo " installation of mysql is success"
-fi
+validate $? "mysql installation"
  yum install postfix -y 
 
- if [ $? -ne 0 ]
-then 
-    echo " installation of postfix is error"
-    exit 1
-else
-    echo " installation of postfix is success"
-fi
+validate $? "postfix installation"
