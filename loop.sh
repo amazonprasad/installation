@@ -1,6 +1,6 @@
 #!/bin/bash
 
-G="\e[32m
+G="\e[32m"
 for i in {1...100}
 do 
     echo -e $G $i
