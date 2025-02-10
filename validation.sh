@@ -9,6 +9,7 @@ validate(){
         exit 1
     else   
         echo " $2 .... success"
+    fi
 }
 then 
     echo "ERROR: Your not the root user"
