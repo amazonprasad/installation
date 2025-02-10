@@ -3,17 +3,17 @@ date=$(date +%F)
 USERID=$(id -u)
 scriptname=$0
 logfile=/tmp/$scriptname-$date.log
-r="\e[31m"
-g="\e[32m"
-n="\e[0m"
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 validate(){
     if [ $1 -ne 0 ]
     then 
-        echo " $2.... $r failure $n"
+        echo " $2.... $R failure $N"
         exit 1
     else   
-        echo " $2 .... $g success $n"
+        echo " $2 .... $G success $N"
     fi
 }
 if [ $USERID -ne 0 ]
