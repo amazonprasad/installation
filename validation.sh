@@ -1,6 +1,8 @@
 #!/bin/bash
-
+date=$(date +F%)
 USERID=$(id -u)
+scriptname=$0
+logfile=/tmp/$scriptname-$date.log
 
 validate(){
     if [ $1 -ne 0 ]
@@ -19,9 +21,9 @@ else
     echo " Your are the root user"
 fi
 
-yum install mysql -y 
+yum install mysql -y &>>$logfile
 
 validate $? "mysql installation"
- yum install postfix -y 
+ yum install postfix -y &>>$logfile
 
 validate $? "postfix installation"
