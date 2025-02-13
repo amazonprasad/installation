@@ -8,10 +8,10 @@
  VALIDATE(){
     if [ $1 -ne 0 ];
     then 
-        echo -e " Installing...$R is failure $N"
+        echo -e " Installing $i...$R is failure $N"
         exit 1
     else
-        echo -e " Installing...$G is success $N"
+        echo -e " Installing $i...$G is success $N"
     fi
  }
 if [ $USERID -ne 0 ]
