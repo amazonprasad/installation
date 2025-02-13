@@ -23,7 +23,7 @@ fi
 
 for i in $@
 do 
-    yum list installed $! &>>$LOGFILE
+    yum list installed $i &>>$LOGFILE
     if [ $? -ne 0 ]
     then 
         echo -e "$R $i is not installed, let us install now $N"
