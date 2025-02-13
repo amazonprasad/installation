@@ -17,6 +17,7 @@
 if [ $USERID -ne 0 ]
 then 
     echo -e " $R Error: Your not the root user $N"
+    exit 1
 else 
     echo -e " $G Your are the root user $N"
 fi 
