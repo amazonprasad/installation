@@ -6,7 +6,7 @@
  N="\e[30m"
  LOGFILE=/tmp/$0.log
  VALIDATE(){
-    if [ $1 -ne 0 ]
+    if [ $1 -ne 0 ];
     then 
         echo -e " Installing...$R is failure $N"
         exit 1
@@ -23,11 +23,11 @@ fi
 
 for i in $@
 do 
-    yum list installed $! &>> $LOGFILE
+    yum list installed $! &>>$LOGFILE
     if [ $? -ne 0 ]
     then 
-        echo -e "  $R $i is not installed, let us install now $N"
-        yum install $i -y  &>> $LOGFILE
+        echo -e "$R $i is not installed, let us install now $N"
+        yum install $i -y  &>>$LOGFILE
         VALIDATE $? "$i"
     else 
         echo -e " $G $i is already installed $N"
