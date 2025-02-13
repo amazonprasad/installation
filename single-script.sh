@@ -23,11 +23,11 @@ fi
 
 for i in $@
 do 
-    yum list installed $! 
+    yum list installed $! &>> $LOGFILE
     if [ $? -ne 0 ]
     then 
         echo -e "  $R $i is not installed, let us install now $N"
-        yum install $i -y
+        yum install $i -y  &>> $LOGFILE
         VALIDATE $? "$i"
     else 
         echo -e " $G $i is already installed $N"
