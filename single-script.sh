@@ -4,6 +4,7 @@
  R="\e[31m"
  G="\e[32m"
  N="\e[30m"
+ LOGFILE=/tmp/$0.log
  VALIDATE(){
     if [ $1 -ne 0 ]
     then 
@@ -22,7 +23,7 @@ fi
 
 for i in $@
 do 
-    yum list install $! 
+    yum list installed $! 
     if [ $? -ne 0 ]
     then 
         echo -e "  $R $i is not installed, let us install now $N"
