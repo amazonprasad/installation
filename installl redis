@@ -1,0 +1,25 @@
+Step 1: Install Build Dependencies
+
+sudo dnf install -y gcc make jemalloc-devel
+
+Step 2: Download Redis 6.2 Source Code
+
+wget http://download.redis.io/releases/redis-6.2.13.tar.gz
+
+
+Step 3: Extract and Compile
+
+tar xzf redis-6.2.13.tar.gz
+cd redis-6.2.13
+make
+sudo make install
+
+
+Step 4: Start Redis
+
+redis-server &
+
+
+
+
+
